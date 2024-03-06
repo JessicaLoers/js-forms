@@ -1,4 +1,3 @@
-// speichert unser "Formular"
 const form = document.querySelector('[data-js="form"]');
 const messageInput = document.querySelector('[data-js="personal-message"]');
 const charactersLeftElement = document.querySelector('[data-js="remaining-characters"]');
