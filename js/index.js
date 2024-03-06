@@ -3,7 +3,10 @@ const form = document.querySelector('[data-js="form"]');
 const messageInput = document.querySelector('[data-js="personal-message"]');
 const charactersLeftElement = document.querySelector('[data-js="remaining-characters"]');
 
+// Add an event listener to the 'messageInput' element that triggers on every input event (e.g., each time the user types something)
 messageInput.addEventListener('input', (event) => {
+  // Update the text content with the number of characters left
+  // This is calculated by subtracting the length of the current value (it's a string) in the input field from the maximum allowed characters (150 in this case)
   charactersLeftElement.textContent = 150 - event.target.value.length;
 });
 
