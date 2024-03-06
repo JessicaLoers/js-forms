@@ -12,13 +12,16 @@ form.addEventListener('submit', (event) => {
   // Prevent the default form submission behavior (e.g. page reload)
   event.preventDefault();
 
-  // Get all form elements (all inputs, select, date etc.)
-  const formElements = event.target.elements;
+  // Create a FormData object for the form that triggered the event.
+  // FormData objects are used to capture the values of the form fields.
+  const form = new FormData(event.target);
 
-  // Log the value of the input field with the name 'firstName'
-  console.log('value of first input', formElements.firstName.value);
-  // Log the value of the input field with the name 'LastName'
-  console.log('value of second input', formElements.lastName.value);
+  // Convert the FormData object into a regular JavaScript object.
+  const formData = Object.fromEntries(form);
+
+  // Log the resulting: all form input names as keys and their corresponding values.
+  // This object makes it easier and "faster" to access form data
+  console.log('object of all input elements', formData);
 
   // Reset the form to its initial values
   event.target.reset();
